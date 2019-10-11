@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>无障碍上网 | 刘小光的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Tools,">
+  
+
+  <meta name="description" content="为了能更加方便的获取资讯、查询资料，有时我们需要使用类似 Google 的服务，这时就需要懂得如何科学上网。 科学上网主要有两种方案：1. 直接购买商业公司提供的 VPN（Virtual Private Network 虚拟专用网络）服务；2. 通过购买国外 VPS（Virtual Private Server 虚拟专用服务器），自己配置服务器，利用国外 VPS 的流量转发实现科学上网。 一 直接">
+<meta name="keywords" content="Tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无障碍上网">
+<meta property="og:url" content="https://xiaogliu.github.io/2019/05/06/surfing-the-internet-freely/index.html">
+<meta property="og:site_name" content="刘小光的博客">
+<meta property="og:description" content="为了能更加方便的获取资讯、查询资料，有时我们需要使用类似 Google 的服务，这时就需要懂得如何科学上网。 科学上网主要有两种方案：1. 直接购买商业公司提供的 VPN（Virtual Private Network 虚拟专用网络）服务；2. 通过购买国外 VPS（Virtual Private Server 虚拟专用服务器），自己配置服务器，利用国外 VPS 的流量转发实现科学上网。 一 直接">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-11T09:50:21.333Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无障碍上网">
+<meta name="twitter:description" content="为了能更加方便的获取资讯、查询资料，有时我们需要使用类似 Google 的服务，这时就需要懂得如何科学上网。 科学上网主要有两种方案：1. 直接购买商业公司提供的 VPN（Virtual Private Network 虚拟专用网络）服务；2. 通过购买国外 VPS（Virtual Private Server 虚拟专用服务器），自己配置服务器，利用国外 VPS 的流量转发实现科学上网。 一 直接">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-87747398-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b13a69b867cd1964903ac0c912077723";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">导航</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">导航</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            目录
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-直接购买-VPN"><span class="toc-text">一 直接购买 VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-多态"><span class="toc-text">1.1 多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-ExpressVPN"><span class="toc-text">1.2 ExpressVPN</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-搭建个人-VPS"><span class="toc-text">二 搭建个人 VPS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-VPS-选择与说明"><span class="toc-text">2.1 VPS 选择与说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-搭建-VPS-并实现科学上网"><span class="toc-text">2.2 搭建 VPS 并实现科学上网</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-从-0-到-1-搭建-VPS"><span class="toc-text">2.2.1 从 0 到 1 搭建 VPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-client-端安装-ss"><span class="toc-text">2.2.2 client 端安装 ss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-多人共用一个-VPS-并实现流量控制"><span class="toc-text">2.2.3 多人共用一个 VPS 并实现流量控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-快速重置-ip"><span class="toc-text">2.2.4 快速重置 ip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-5-重置密码"><span class="toc-text">2.3.5 重置密码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他参考资料"><span class="toc-text">其他参考资料</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-无障碍上网" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">无障碍上网</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.05.06</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>刘小光</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://xiaogliu.github.io/2019/05/06/surfing-the-internet-freely/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>为了能更加方便的获取资讯、查询资料，有时我们需要使用类似 <a href="https://www.google.com/" target="_blank" rel="noopener">Google</a> 的服务，这时就需要懂得如何科学上网。</p>
+<p>科学上网主要有两种方案：1. 直接购买商业公司提供的 VPN（Virtual Private Network 虚拟专用网络）服务；2. 通过购买国外 VPS（Virtual Private Server 虚拟专用服务器），自己配置服务器，利用国外 VPS 的流量转发实现科学上网。</p>
+<h1 id="一-直接购买-VPN"><a href="#一-直接购买-VPN" class="headerlink" title="一 直接购买 VPN"></a>一 直接购买 VPN</h1><p>如果不想折腾，直接购买靠谱 VPN 服务比较好，相比于自己配置 VPS 除了不会在前期遇到搭建的技术问题，后期也基本不会遇到 ip 被封的苦恼（ip 被封后不得不花时间重新配置 VPS）。</p>
+<p>我所知道的靠谱 VPN 服务商有下面两个：</p>
+<h2 id="1-1-多态"><a href="#1-1-多态" class="headerlink" title="1.1 多态"></a>1.1 多态</h2><p><a href="https://duotai.love/" target="_blank" rel="noopener">多态</a>是国内服务商，基础版包年每月 16 （192/12） 元，单月买每月 20 元，和高级版相比，基础版每月有 10G 流量限制，速度没有差别，如果没有特殊需求，完全够用。另外，并不是说当月流量超过 10G 就不能继续使用，只是如果每月都超出，多态团队会邮件提醒升级套餐。</p>
+<p>尽管是小众 VPN 服务商，但由于大家熟知的原因目前多态官网已不能直接在大陆访问，且官网已经没有注册入口，不过注册后的用户依旧可以稳定的使用多态服务，即便在某些特殊的日子里。</p>
+<p>当初选择多态是因为多态官网在 Q/A 部分有一个感性的问答：</p>
+<blockquote>
+<p>Q: 我们的情怀是什么？</p>
+<p>A: 我们其实没有什么情怀，我们只想为你提供最好的上网工具。而为了达到这个「最好」，我们会付出一切与之对称的努力。我们希望你会一直使用多态，所以我们愿意虚心的倾听你的建议，甚至希望你告诉我们有谁比我们更好，我们可能会用事实回应，也可能默默改进。</p>
+<p>我们享受「日本零售业」的优质服务，所以我们也很乐意为你提供优质的售后服务。虽然没有专职的客服人员，但我们肯定不会用高冷或者阴阳怪气的语言和你对话。因此，你肯定不会在多态遇到这样的答复：「你可以用别人的」、「请自行百度」、「不为什么」、「亲，」……</p>
+<p>这样的尊重，也同样体现在一些服务设置方面，例如：允许账户在一定范围内多人共享使用；支持 72 小时内无条件退款；套餐档位的设计遵循成本差异原则，而不通过条件限制来引导用户购买更高级别套餐。</p>
+<p>这些便是多态团队觉得所有商业行为都应该做的事情，便谈不上骄傲，更别提情怀了。</p>
+<p>只是很凑巧的发现，我们成为了第一个，也是唯一这么做的而已。</p>
+</blockquote>
+<p>既然多态已经不能注册，干嘛还写这么多。。因为虽然官网没有注册入口，但目前还可以通过 url 直接访问注册页面，如有需要可给我发邮件 <a href="mailto:vincexgliu@gmail.com" target="_blank" rel="noopener">vincexgliu@gmail.com</a>，我会将注册页面的 url 及邀请码（必须有邀请码才能注册）一并发给你。 </p>
+<h2 id="1-2-ExpressVPN"><a href="#1-2-ExpressVPN" class="headerlink" title="1.2 ExpressVPN"></a>1.2 ExpressVPN</h2><p>价格较高（\$8.32/Month），但服务比较稳定，速度也快，更多信息可参考 <a href="https://www.ufvhcaj.xyz/" target="_blank" rel="noopener">ExpressVPN 官网</a>。</p>
+<h1 id="二-搭建个人-VPS"><a href="#二-搭建个人-VPS" class="headerlink" title="二 搭建个人 VPS"></a>二 搭建个人 VPS</h1><h2 id="2-1-VPS-选择与说明"><a href="#2-1-VPS-选择与说明" class="headerlink" title="2.1 VPS 选择与说明"></a>2.1 VPS 选择与说明</h2><p>如果是程序员，建议自己搭建 VPS，VPS 作为虚拟专用服务器，科学上网只是它能做的很多事中的一种，除此之外，还可以搭建个人网站作为测试学习之用，相比于阿里云/腾讯云动辄几百元每月的费用，国外有些 VPS 基础版只需几十元每月。</p>
+<p>比较出名的国外 VPS 有 <a href="https://www.vultr.com" target="_blank" rel="noopener">Vultr</a> 和 <a href="https://bwh88.net" target="_blank" rel="noopener">搬瓦工</a>，对于两者的对比网上很多文章，基础版相差不大，我选择 Vultr，因为网站做的更好看。</p>
+<p>所以接下来都是介绍如果搭建 Vultr VPS。对于 Vultr 最基础版本是 \$5/month，并且，它是按小时计费，如果没有在运行的 server，是不会扣费的（不知道搬瓦工有没有这样的功能）。</p>
+<blockquote>
+<p>再次提醒，搭建 VPS ip 很容易在某些特殊时间点被封，当然，Vultr 提供了快照备份工具，可以快速、免费地更换 server ip。但仍然是比较头疼的一件事。</p>
+</blockquote>
+<h2 id="2-2-搭建-VPS-并实现科学上网"><a href="#2-2-搭建-VPS-并实现科学上网" class="headerlink" title="2.2 搭建 VPS 并实现科学上网"></a>2.2 搭建 VPS 并实现科学上网</h2><p>搭建过程网上已有很多教程，接下来放链接为主，备注为否。</p>
+<h3 id="2-2-1-从-0-到-1-搭建-VPS"><a href="#2-2-1-从-0-到-1-搭建-VPS" class="headerlink" title="2.2.1 从 0 到 1 搭建 VPS"></a>2.2.1 从 0 到 1 搭建 VPS</h3><p>这篇文章写的很详细，<a href="https://github.com/pig6/vps" target="_blank" rel="noopener">超详细国外 VPS 搭建教程</a>，这里做简单介绍：</p>
+<p>1）注册<br>2）选择 VPS（\$5/month 够用了）并 deploy<br>3）利用 VPS 流量转发实现科学上网，这一过程通过 ShadowSocks（以下简称 ss） 完成：在 VPS 上安装 server 端 ss，server 端 ss 安装完成后会生成相应的 ip、密码、加密方法；在需要科学上网的设备上安装 client 端 ss，然后填入 server 端 ss 生成的 ip、密码、加密方法，便可实现科学上网。</p>
+<h3 id="2-2-2-client-端安装-ss"><a href="#2-2-2-client-端安装-ss" class="headerlink" title="2.2.2 client 端安装 ss"></a>2.2.2 client 端安装 ss</h3><p>1）PC 及安卓端</p>
+<p>PC 端直接在 <a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="noopener">ShadowSocks 官网</a>下载安装包就好。</p>
+<p>安卓端，下载安装包后也可以直接安装？</p>
+<p>2）iOS</p>
+<p>iOS 安装最简单方法就是通过登录美区 Apple id，然后在美区 Apple Store 下载 <code>Potatso Lite</code>（免费 ss 客户端）。</p>
+<p>获取美区 Apple id 可以在淘宝买，或者参考 <a href="https://zhuanlan.zhihu.com/p/36574047" target="_blank" rel="noopener">5 分钟注册美国区 Apple ID（19 年 4 月测试有效）</a>。</p>
+<h3 id="2-2-3-多人共用一个-VPS-并实现流量控制"><a href="#2-2-3-多人共用一个-VPS-并实现流量控制" class="headerlink" title="2.2.3 多人共用一个 VPS 并实现流量控制"></a>2.2.3 多人共用一个 VPS 并实现流量控制</h3><p>使用 VPS 科学上网有个优点是对于连接的客户端数量没有限制，所以可以多人共用一个 VPS 实现科学上网。</p>
+<p>1）创建多用户（多端口及密码）</p>
+<p>在 <code>/etc</code> 目录下新建 <code>shadowsocks.json</code> 并填入下面内容：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"server"</span>: <span class="string">"0.0.0.0"</span>,</span><br><span class="line">  <span class="attr">"port_password"</span>: &#123;</span><br><span class="line">    <span class="attr">"8002"</span>: <span class="string">"pw1"</span>,</span><br><span class="line">    <span class="attr">"8003"</span>: <span class="string">"pw2"</span>,</span><br><span class="line">    <span class="attr">"8005"</span>: <span class="string">"pw3"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">  <span class="attr">"local_port"</span>: <span class="number">1080</span>,</span><br><span class="line">  <span class="attr">"timeout"</span>: <span class="number">300</span>,</span><br><span class="line">  <span class="attr">"method"</span>: <span class="string">"aes-256-cfb"</span>,</span><br><span class="line">  <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2）对多账户进行管理</p>
+<p>如果需要对多账户进行流量统计及限制，参考这篇文章：<a href="https://www.flyzy2005.com/fan-qiang/shadowsocks/shadowsocks-config-multiple-users/" target="_blank" rel="noopener">详解 shadowsocks 配置多用户多密码</a></p>
+<h3 id="2-2-4-快速重置-ip"><a href="#2-2-4-快速重置-ip" class="headerlink" title="2.2.4 快速重置 ip"></a>2.2.4 快速重置 ip</h3><p>自己配置的 VPS ip 难免被封，通过创建新的 VPS 会分配一个新的 ip，为了减少重新创建、配置（安装相关软件，存放相关资源） VPS 的时间，可以在第一次配置好 VPS 后做个备份（Snapshots），后续基于这个备份创建 VPS。</p>
+<p>具体参考：<a href="https://www.laozuo.org/11188.html" target="_blank" rel="noopener">利用 Vultr 快照备份 Snapshots 功能备份数据和迁移方案</a></p>
+<h3 id="2-3-5-重置密码"><a href="#2-3-5-重置密码" class="headerlink" title="2.3.5 重置密码"></a>2.3.5 重置密码</h3><p>如果因为各种原因忘记了密码，可以通过命令行修改，参考这篇文章：<a href="https://www.vultr.com/docs/boot-into-single-user-mode-reset-root-password" target="_blank" rel="noopener">Access Single User Mode (Reset Root Password)</a></p>
+<h1 id="其他参考资料"><a href="#其他参考资料" class="headerlink" title="其他参考资料"></a>其他参考资料</h1><p><a href="https://medium.com/@jackme256/科学上网-vultr-vps-搭建-shadowsocks-ss-教程-新手向-968613081aae" target="_blank" rel="noopener">科学上网：Vultr VPS 搭建 Shadowsocks（ss）教程（新手向）</a></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/12/12/webpack-memo/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/07/24/rollup-config/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              目录
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'xiaogliu';
+    
+    var disqus_url = 'https://xiaogliu.github.io/2019/05/06/surfing-the-internet-freely/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//xiaogliu.disqus.com/count.js" async></script>
+
+
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

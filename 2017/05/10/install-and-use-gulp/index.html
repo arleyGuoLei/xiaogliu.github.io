@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Gulp安装及使用 | 刘小光的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Babel,Gulp,工程化,">
+  
+
+  <meta name="description" content="Gulp用途Gulp是自动任务执行工具，主要用途是把开发者从重复劳动中解放出来，Gulp可以做但不限于以下工作：  转换、压缩、合并js或者css文件（包括Less/Sass文件转CSS文件，ECMA-262高版本转低版本） 设置某次改动后自动更新版本号、提交commit到git等 在编辑器中点击保存按钮自动刷新浏览器页面 运行代码分析 快速运行单元测试  其中压缩、转换、合并js或者css文件是">
+<meta name="keywords" content="Babel,Gulp,工程化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp安装及使用">
+<meta property="og:url" content="https://xiaogliu.github.io/2017/05/10/install-and-use-gulp/index.html">
+<meta property="og:site_name" content="刘小光的博客">
+<meta property="og:description" content="Gulp用途Gulp是自动任务执行工具，主要用途是把开发者从重复劳动中解放出来，Gulp可以做但不限于以下工作：  转换、压缩、合并js或者css文件（包括Less/Sass文件转CSS文件，ECMA-262高版本转低版本） 设置某次改动后自动更新版本号、提交commit到git等 在编辑器中点击保存按钮自动刷新浏览器页面 运行代码分析 快速运行单元测试  其中压缩、转换、合并js或者css文件是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-11T09:50:21.333Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gulp安装及使用">
+<meta name="twitter:description" content="Gulp用途Gulp是自动任务执行工具，主要用途是把开发者从重复劳动中解放出来，Gulp可以做但不限于以下工作：  转换、压缩、合并js或者css文件（包括Less/Sass文件转CSS文件，ECMA-262高版本转低版本） 设置某次改动后自动更新版本号、提交commit到git等 在编辑器中点击保存按钮自动刷新浏览器页面 运行代码分析 快速运行单元测试  其中压缩、转换、合并js或者css文件是">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-87747398-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b13a69b867cd1964903ac0c912077723";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">导航</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">导航</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            目录
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Gulp用途"><span class="toc-text">Gulp用途</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gulp-安装"><span class="toc-text">Gulp 安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gulp配置"><span class="toc-text">Gulp配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用案例"><span class="toc-text">使用案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Gulp安装及使用" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Gulp安装及使用</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.05.10</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>刘小光</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://xiaogliu.github.io/2017/05/10/install-and-use-gulp/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="Gulp用途"><a href="#Gulp用途" class="headerlink" title="Gulp用途"></a>Gulp用途</h1><p>Gulp是自动任务执行工具，主要用途是把开发者从重复劳动中解放出来，Gulp可以做但不限于以下工作：</p>
+<ul>
+<li>转换、压缩、合并js或者css文件（包括Less/Sass文件转CSS文件，ECMA-262高版本转低版本）</li>
+<li>设置某次改动后自动更新版本号、提交commit到git等</li>
+<li>在编辑器中点击保存按钮自动刷新浏览器页面</li>
+<li>运行代码分析</li>
+<li>快速运行单元测试</li>
+</ul>
+<p>其中压缩、转换、合并js或者css文件是最为常用功能。</p>
+<blockquote>
+<p>Gulp借鉴了Unix操作系统的管道（pipe）思想，很多人认为，在操作上，它要比Grunt简单</p>
+</blockquote>
+<h1 id="Gulp-安装"><a href="#Gulp-安装" class="headerlink" title="Gulp 安装"></a>Gulp 安装</h1><p>如果之前全局安装过Gulp，先卸载全局安装的Gulp<code>npm rm --global gulp</code>，然后开始下面的步骤。</p>
+<blockquote>
+<p>Gulp维护团队已不再建议全局安装<code>gulp</code>，可参参考这个issue<a href="https://github.com/gulpjs/gulp/issues/1795" target="_blank" rel="noopener">gulp vs gulp-cli reasoning unclear in getting started guide</a>，但在<a href="http://www.gulpjs.com.cn/docs/getting-started/" target="_blank" rel="noopener">gulp中文网</a> 还未更新，依旧建议全局安装<code>gulp</code>，安装时请注意。</p>
+</blockquote>
+<p><strong>步骤一</strong>，全局安装Gulp命令行工具   </p>
+<p>任意目录执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --global gulp-cli</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>全局安装不是必须的，如果只是在项目中引入Gulp而不希望全局安装Gulp命令行工具，可以通过<strong>npm script</strong>实现对Gulp的调用。</p>
+</blockquote>
+<p><strong>步骤二</strong>，项目本地安装Gulp   </p>
+<p>项目根目录执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
+<p><strong>步骤三</strong>，常见<code>gulpfile.js</code>文件</p>
+<p>在项目根目录新建<code>gulpfile.js</code>文件，并添加下面内容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// place code for your default task here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>default</code>是输入<code>gulp</code>以后默认执行的任务，如果要执行过个任务，可以用这个命令<code>gulp &lt;task&gt; &lt;othertask&gt;</code></p>
+</blockquote>
+<p><strong>步骤四</strong>，测试是否成功</p>
+<p>输入<code>gulp</code>命令，如果输出以下打印内容，说明Gulp安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gulp</span><br><span class="line">[16:22:02] Using gulpfile x:\study\myProject\calculator_for_house_loan\jquery\gulpfile.js</span><br><span class="line">[16:22:02] Starting <span class="string">'default'</span>...</span><br><span class="line">[16:22:02] Finished <span class="string">'default'</span> after 63 μs</span><br></pre></td></tr></table></figure>
+<h1 id="Gulp配置"><a href="#Gulp配置" class="headerlink" title="Gulp配置"></a>Gulp配置</h1><p>Gulp强大之处在于可以引入插件实现一系列功能。下面是引入压缩js文件插件的例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'minify'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'js/app.js'</span>)</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'build'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 如果使用ES6语法，<code>gulp-uglify</code>会报错<code>GulpUglifyError: unable to minify JavaScript</code>，需要引入Babel对ES6语法进行转换，更改后代码如下（同时引入错误标记插件<code>gulp-util</code>）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入gulp</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入依赖模块</span></span><br><span class="line"><span class="keyword">var</span> babel = <span class="built_in">require</span>(<span class="string">"gulp-babel"</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="keyword">var</span> gutil = <span class="built_in">require</span>(<span class="string">'gulp-util'</span>); <span class="comment">// 错误标记插件</span></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'js/main_js.js'</span>) <span class="comment">// 加return，finish后马上结束，但显示总时间长</span></span><br><span class="line">  .pipe(babel())</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123; gutil.log(gutil.colors.red(<span class="string">'[Error]'</span>), err.toString()); &#125;)</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'build'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>gulp.task</code>, <code>gulp.src</code>, <code>gulp.dest</code>等属于Gulp的API，多更信息可参看<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="noopener">gulp API docs</a>   </p>
+</blockquote>
+<h1 id="使用案例"><a href="#使用案例" class="headerlink" title="使用案例"></a>使用案例</h1><ul>
+<li>下面是实际使用的一个简单案例   </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">const</span> minify = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line"><span class="keyword">const</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"><span class="keyword">const</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./css/main.scss'</span>)</span><br><span class="line">    .pipe(sass()) <span class="comment">// 转化scss文件</span></span><br><span class="line">    .pipe(minify()) <span class="comment">// 转化后压缩</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/css/'</span>))</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'minjs'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./js/main.js'</span>)</span><br><span class="line">    .pipe(uglify()) <span class="comment">// 压缩js文件</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/js/'</span>))</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置watch，自动转化、压缩</span></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'./css/main.scss'</span>, [<span class="string">'sass'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'./js/main.js'</span>, [<span class="string">'minjs'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下面是实际使用的一个复杂案例   </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入 gulp</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="comment">// 引入组件</span></span><br><span class="line"><span class="keyword">var</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>);</span><br><span class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line"><span class="keyword">var</span> gutil = <span class="built_in">require</span>(<span class="string">"gulp-util"</span>);</span><br><span class="line"><span class="keyword">var</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>);</span><br><span class="line"><span class="keyword">var</span> md5 = <span class="built_in">require</span>(<span class="string">'md5-file'</span>);</span><br><span class="line"><span class="keyword">var</span> replace = <span class="built_in">require</span>(<span class="string">'gulp-replace-task'</span>);</span><br><span class="line"><span class="keyword">var</span> source = <span class="built_in">require</span>(<span class="string">'vinyl-source-stream'</span>);  </span><br><span class="line"><span class="keyword">var</span> buffer = <span class="built_in">require</span>(<span class="string">'vinyl-buffer'</span>);</span><br><span class="line"><span class="keyword">var</span> browserify = <span class="built_in">require</span>(<span class="string">'browserify'</span>);</span><br><span class="line"><span class="keyword">var</span> nodemon = <span class="built_in">require</span>(<span class="string">'gulp-nodemon'</span>);</span><br><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oPath = &#123;</span><br><span class="line">  <span class="string">'sass'</span>: <span class="string">'common/css/*.css'</span>,</span><br><span class="line">  <span class="string">'directives'</span>: <span class="string">'common/engine/directives/**/*.js'</span>,</span><br><span class="line">  <span class="string">'services'</span>: <span class="string">'common/engine/services/**/*.js'</span>,</span><br><span class="line">  <span class="string">'templates'</span>: <span class="string">'@(supplyCloud|common|integrated|platformService)/views/**/*.html'</span>,</span><br><span class="line">  <span class="string">'controllers'</span>: <span class="string">'@(supplyCloud|common|integrated|platformService)/controllers/**/*.js'</span>,</span><br><span class="line">  <span class="string">'bundles'</span>: <span class="string">'public/@(js|css)/!(version).*'</span>,</span><br><span class="line">  <span class="string">'core'</span>: [</span><br><span class="line">  <span class="string">'common/engine/setting.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/tools.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/common.js'</span>,</span><br><span class="line">  <span class="string">'common/js/zhl.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/app.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/route_cloud.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/directives.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/filters.js'</span>,</span><br><span class="line">  <span class="string">'common/engine/factory.js'</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">'vendor'</span>: [</span><br><span class="line">  <span class="string">"common/vendors/lodash.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular-translate.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular-translate-loader-static-files.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular-sanitize.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular-resource.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/bootstrap/js/bootstrap.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular-route.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/angular/angular-cookies.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/file-upload/dist/angular-file-upload.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/md5.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/big.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/chart.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/jquery/jquery-ui.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/jquery/jquery.mousewheel.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/datetimepicker/js/bootstrap-datetimepicker.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/web-im/strophe-1.2.8.min.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/web-im/webim.config.js"</span>,</span><br><span class="line">  <span class="string">"common/vendors/web-im/websdk-1.1.3.js"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">'vendorCss'</span>: [</span><br><span class="line">  <span class="string">'common/vendors/bootstrap/css/bootstrap.min.css'</span>,</span><br><span class="line">  <span class="string">'common/vendors/Font-Awesome/css/font-awesome.min.css'</span>,</span><br><span class="line">  <span class="string">'common/vendors/datetimepicker/css/bootstrap-datetimepicker.min.css'</span></span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> NODE_ENV = <span class="string">'production'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> createErrorHandler = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> err.cause.stack;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'Error from '</span> + name + <span class="string">' in compress task'</span>, err.cause);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span> (<span class="params">env</span>) </span>&#123;</span><br><span class="line">  NODE_ENV = env;</span><br><span class="line">  nodemon(&#123;</span><br><span class="line">    script: <span class="string">'server.js'</span>,</span><br><span class="line">    ext: <span class="string">'js html json'</span>,</span><br><span class="line">    watch: [</span><br><span class="line">    <span class="string">'server.js'</span>,</span><br><span class="line">    <span class="string">'env.json'</span>,</span><br><span class="line">    <span class="string">'app'</span>,</span><br><span class="line">    <span class="string">'config'</span>,</span><br><span class="line">    <span class="string">'resources'</span></span><br><span class="line">    ],</span><br><span class="line">    delay: <span class="string">'2000'</span>,</span><br><span class="line">    ignor: [<span class="string">'gulpfile.js'</span>],</span><br><span class="line">    env: &#123;<span class="string">'NODE_ENV'</span>: env&#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'development'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  start(<span class="string">'development'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">'production'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  start(<span class="string">'production'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'compress'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  pump([</span><br><span class="line">    gulp.src(<span class="string">'lib/*.js'</span>),</span><br><span class="line">    uglify(),</span><br><span class="line">    gulp.dest(<span class="string">'dist'</span>)</span><br><span class="line">    ],</span><br><span class="line">    cb</span><br><span class="line">    );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'browserify'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  browserify()</span><br><span class="line">  .require(<span class="string">'./common/engine/util.js'</span>, &#123;<span class="attr">expose</span>: <span class="string">'util'</span>&#125;)</span><br><span class="line">  .require(<span class="string">'./common/vendors/moment.js'</span>, &#123;<span class="attr">expose</span>: <span class="string">'moment'</span>&#125;)</span><br><span class="line">  .exclude(<span class="string">'version'</span>)</span><br><span class="line">  .bundle()</span><br><span class="line">  .pipe(source(<span class="string">'common.bundle.js'</span>))</span><br><span class="line">  .pipe(buffer())</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .on(<span class="string">'error'</span>, createErrorHandler(<span class="string">'uglify'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'public/js'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查脚本</span></span><br><span class="line">gulp.task(<span class="string">'lint'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src([oPath.directives, oPath.services])</span><br><span class="line">  .pipe(jshint())</span><br><span class="line">  .pipe(jshint.reporter(<span class="string">'default'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并，压缩指令文件</span></span><br><span class="line">gulp.task(<span class="string">'min-directives'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(oPath.directives)</span><br><span class="line">  .pipe(concat(<span class="string">'directive.min.js'</span>))</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .on(<span class="string">'error'</span>, createErrorHandler(<span class="string">'uglify'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'public/js'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并，压缩服务文件</span></span><br><span class="line">gulp.task(<span class="string">'min-services'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(oPath.services)</span><br><span class="line">  .pipe(concat(<span class="string">'services.min.js'</span>))</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .on(<span class="string">'error'</span>, createErrorHandler(<span class="string">'uglify'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'public/js'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并，压缩项目核心文件</span></span><br><span class="line">gulp.task(<span class="string">'min-core'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(oPath.core)</span><br><span class="line">  .pipe(concat(<span class="string">'core.min.js'</span>))</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .on(<span class="string">'error'</span>, createErrorHandler(<span class="string">'uglify'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'public/js'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并，压缩第三方库</span></span><br><span class="line">gulp.task(<span class="string">'min-vendor'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(oPath.vendor)</span><br><span class="line">  .pipe(concat(<span class="string">'vendor.min.js'</span>))</span><br><span class="line">  .pipe(uglify())</span><br><span class="line">  .on(<span class="string">'error'</span>, createErrorHandler(<span class="string">'uglify'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'public/js'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//合并压缩css</span></span><br><span class="line">gulp.task(<span class="string">"sass"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(oPath.sass)</span><br><span class="line">  .pipe(sass(&#123;<span class="attr">outputStyle</span>: <span class="string">'compressed'</span>&#125;).on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">  .pipe(concat(<span class="string">'zhl.css'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">"public/css"</span>));</span><br><span class="line">  gulp.src(oPath.vendorCss)</span><br><span class="line">  .pipe(sass(&#123;<span class="attr">outputStyle</span>: <span class="string">'compressed'</span>&#125;).on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">  .pipe(concat(<span class="string">'vendor.min.css'</span>))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'public/css'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为所有controller和template增加版本hash</span></span><br><span class="line">gulp.task(<span class="string">"version"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> objHash = &#123;&#125;,</span><br><span class="line">  arrHash = [];</span><br><span class="line"></span><br><span class="line">  objHash.build = (<span class="keyword">new</span> <span class="built_in">Date</span>()).toLocaleString();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//templates</span></span><br><span class="line">    glob.sync(oPath.templates).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>&#123;</span><br><span class="line">      objHash[file] = md5.sync(file).slice(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//controlers</span></span><br><span class="line">    glob.sync(oPath.controllers).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>&#123;</span><br><span class="line">      objHash[file] = md5.sync(file).slice(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//min and bundle files</span></span><br><span class="line">    glob.sync(oPath.bundles).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">file</span>) </span>&#123;</span><br><span class="line">      objHash[file] = md5.sync(file).slice(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Object</span>.keys(objHash).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123;</span><br><span class="line">      arrHash.push(<span class="string">'"'</span> + key + <span class="string">'"'</span> + <span class="string">' : '</span> + <span class="string">'"'</span> + objHash[key] + <span class="string">'"'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    gulp.src(<span class="string">'./resources/config/version.js.tpl'</span>)</span><br><span class="line">    .pipe(replace(&#123;</span><br><span class="line">      patterns: [&#123;</span><br><span class="line">        match: <span class="string">'hash'</span>,</span><br><span class="line">        replacement: arrHash.join(<span class="string">' , '</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      ]&#125;))</span><br><span class="line">    .pipe(rename(<span class="string">'version.js'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./config'</span>))</span><br><span class="line"></span><br><span class="line">    browserify()</span><br><span class="line">    .require(<span class="string">'./config/version.js'</span>, &#123;<span class="attr">expose</span>: <span class="string">'version'</span>&#125;)</span><br><span class="line">    .bundle()</span><br><span class="line">    .pipe(source(<span class="string">'version.js'</span>))</span><br><span class="line">    .pipe(buffer())</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .on(<span class="string">'error'</span>, createErrorHandler(<span class="string">'uglify'</span>))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/js'</span>));</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//开发时自动打包任务</span></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'production'</span>, <span class="string">'min'</span>, <span class="string">'browserify'</span>, <span class="string">'version'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch([oPath.sass, oPath.vendorCss], [<span class="string">'sass'</span>]);</span><br><span class="line">  gulp.watch(oPath.directives, [<span class="string">'min-directives'</span>]);</span><br><span class="line">  gulp.watch(oPath.services, [<span class="string">'min-services'</span>]);</span><br><span class="line">  gulp.watch(oPath.core, [<span class="string">'min-core'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'common/engine/util.js'</span>, [<span class="string">'browserify'</span>]);</span><br><span class="line">  gulp.watch([oPath.templates, oPath.controllers, oPath.bundles], [<span class="string">'version'</span>]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//合并压缩</span></span><br><span class="line">gulp.task(<span class="string">'min'</span>, [<span class="string">'min-directives'</span>, <span class="string">'min-services'</span>, <span class="string">'min-core'</span>, <span class="string">'min-vendor'</span>, <span class="string">'sass'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//发布前打包任务</span></span><br><span class="line">gulp.task(<span class="string">'build'</span>, [<span class="string">'min'</span>, <span class="string">'browserify'</span>, <span class="string">'version'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认任务</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'production'</span>, <span class="string">'min'</span>, <span class="string">'browserify'</span>, <span class="string">'version'</span>, <span class="string">'watch'</span>]);</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>【1】 <a href="https://github.com/gulpjs/gulp/blob/master/docs/README.md" target="_blank" rel="noopener">gulp documentation</a><br>【2】 <a href="http://brandonclapp.com/what-is-gulp-js-and-why-use-it/" target="_blank" rel="noopener">What is gulp.js and why use it?</a><br>【3】 <a href="http://javascript.ruanyifeng.com/tool/gulp.html#comment-3299560540" target="_blank" rel="noopener">Gulp：任务自动管理工具</a></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/05/09/install-and-use-babel/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/05/13/package.json-instruction/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              目录
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'xiaogliu';
+    
+    var disqus_url = 'https://xiaogliu.github.io/2017/05/10/install-and-use-gulp/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//xiaogliu.disqus.com/count.js" async></script>
+
+
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
