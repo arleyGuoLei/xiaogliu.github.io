@@ -15,18 +15,18 @@
     <meta name="keywords" content="JavaScript,npm,">
   
 
-  <meta name="description" content="概述package.json是npm本地安装包管理文件，主要作用如下：     充当项目所依赖的安装包的文档说明；    可以指定安装包的版本；    执行npm install命令，可以安装package.json中指定的安装包。这意味着项目移植更加便捷。     使用必须内容一个package.json文件，至少包括name和version两项内容：    &amp;#123;  &quot;name&quot;: &quot;m">
+  <meta name="description" content="这篇文章需要更新啦：需要区分 package.json 和 package-lock.json 及更新机制。 https://github.com/SamHwang1990/blog/issues/7https://stackoverflow.com/questions/44297803/what-is-the-role-of-the-package-lock-jsonhttps://stacko">
 <meta name="keywords" content="JavaScript,npm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="package.json使用说明(npm script)">
 <meta property="og:url" content="https://xiaogliu.github.io/2017/05/13/package.json-instruction/index.html">
 <meta property="og:site_name" content="刘小光的博客">
-<meta property="og:description" content="概述package.json是npm本地安装包管理文件，主要作用如下：     充当项目所依赖的安装包的文档说明；    可以指定安装包的版本；    执行npm install命令，可以安装package.json中指定的安装包。这意味着项目移植更加便捷。     使用必须内容一个package.json文件，至少包括name和version两项内容：    &amp;#123;  &quot;name&quot;: &quot;m">
+<meta property="og:description" content="这篇文章需要更新啦：需要区分 package.json 和 package-lock.json 及更新机制。 https://github.com/SamHwang1990/blog/issues/7https://stackoverflow.com/questions/44297803/what-is-the-role-of-the-package-lock-jsonhttps://stacko">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-11T09:43:46.537Z">
+<meta property="og:updated_time" content="2019-10-12T06:33:15.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="package.json使用说明(npm script)">
-<meta name="twitter:description" content="概述package.json是npm本地安装包管理文件，主要作用如下：     充当项目所依赖的安装包的文档说明；    可以指定安装包的版本；    执行npm install命令，可以安装package.json中指定的安装包。这意味着项目移植更加便捷。     使用必须内容一个package.json文件，至少包括name和version两项内容：    &amp;#123;  &quot;name&quot;: &quot;m">
+<meta name="twitter:description" content="这篇文章需要更新啦：需要区分 package.json 和 package-lock.json 及更新机制。 https://github.com/SamHwang1990/blog/issues/7https://stackoverflow.com/questions/44297803/what-is-the-role-of-the-package-lock-jsonhttps://stacko">
 
   
 
@@ -225,7 +225,9 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><code>package.json</code>是<code>npm</code>本地安装包管理文件，主要作用如下：   </p>
+      <p>这篇文章需要更新啦：需要区分 package.json 和 package-lock.json 及更新机制。</p>
+<p><a href="https://github.com/SamHwang1990/blog/issues/7" target="_blank" rel="noopener">https://github.com/SamHwang1990/blog/issues/7</a><br><a href="https://stackoverflow.com/questions/44297803/what-is-the-role-of-the-package-lock-json" target="_blank" rel="noopener">https://stackoverflow.com/questions/44297803/what-is-the-role-of-the-package-lock-json</a><br><a href="https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json" target="_blank" rel="noopener">https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json</a><br><a href="https://docs.npmjs.com/about-semantic-versioning" target="_blank" rel="noopener">https://docs.npmjs.com/about-semantic-versioning</a><br><a href="https://www.zhihu.com/question/62331583" target="_blank" rel="noopener">https://www.zhihu.com/question/62331583</a>   </p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><code>package.json</code>是<code>npm</code>本地安装包管理文件，主要作用如下：   </p>
 <ul>
 <li>充当项目所依赖的安装包的文档说明；   </li>
 <li>可以指定安装包的版本；   </li>
