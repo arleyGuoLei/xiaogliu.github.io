@@ -7,26 +7,26 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>常用 Linux 命令 | 刘小光的博客</title>
+  <title>解决开发团队中遇到的问题 | 刘小光的博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Command Line,">
+    <meta name="keywords" content="idea,">
   
 
-  <meta name="description" content="命令 中文名及功能 应用举例     lsof (list open files) 列出当前系统打开的文件 lsof -i:3000：正在使用 3000 端口的进程   make “制作”某个文件 make rn_setup_npm   pkill [process name] kill process by name pkill nginx">
-<meta name="keywords" content="Command Line">
+  <meta name="description" content="今天开发团队中遇到了一个问题，大概是：一个用户量较小的市场下出了一个 bug，开发人员调查两天没有发现问题，就先放下了。但一段时间后，这个问题扩展到更大市场。 Leader 在总结时说了一段话，我觉得挺有道理： 首先，开发不止要注重技术，还要关心业务：  我们是dev ops，不只是服务稳定运行，Bussiness metric 也是关键哈，大家要有业务敏感度哈，不能只考虑技术层面，就好像你在运作">
+<meta name="keywords" content="idea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用 Linux 命令">
-<meta property="og:url" content="https://xiaogliu.github.io/2019/10/12/common-linux-command/index.html">
+<meta property="og:title" content="解决开发团队中遇到的问题">
+<meta property="og:url" content="https://xiaogliu.github.io/2020/02/28/solve-problems-in-team/index.html">
 <meta property="og:site_name" content="刘小光的博客">
-<meta property="og:description" content="命令 中文名及功能 应用举例     lsof (list open files) 列出当前系统打开的文件 lsof -i:3000：正在使用 3000 端口的进程   make “制作”某个文件 make rn_setup_npm   pkill [process name] kill process by name pkill nginx">
+<meta property="og:description" content="今天开发团队中遇到了一个问题，大概是：一个用户量较小的市场下出了一个 bug，开发人员调查两天没有发现问题，就先放下了。但一段时间后，这个问题扩展到更大市场。 Leader 在总结时说了一段话，我觉得挺有道理： 首先，开发不止要注重技术，还要关心业务：  我们是dev ops，不只是服务稳定运行，Bussiness metric 也是关键哈，大家要有业务敏感度哈，不能只考虑技术层面，就好像你在运作">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-09T08:11:58.207Z">
+<meta property="og:updated_time" content="2020-02-28T04:01:59.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用 Linux 命令">
-<meta name="twitter:description" content="命令 中文名及功能 应用举例     lsof (list open files) 列出当前系统打开的文件 lsof -i:3000：正在使用 3000 端口的进程   make “制作”某个文件 make rn_setup_npm   pkill [process name] kill process by name pkill nginx">
+<meta name="twitter:title" content="解决开发团队中遇到的问题">
+<meta name="twitter:description" content="今天开发团队中遇到了一个问题，大概是：一个用户量较小的市场下出了一个 bug，开发人员调查两天没有发现问题，就先放下了。但一段时间后，这个问题扩展到更大市场。 Leader 在总结时说了一段话，我觉得挺有道理： 首先，开发不止要注重技术，还要关心业务：  我们是dev ops，不只是服务稳定运行，Bussiness metric 也是关键哈，大家要有业务敏感度哈，不能只考虑技术层面，就好像你在运作">
 
   
 
@@ -175,14 +175,14 @@ ga('send', 'pageview');
 
 
 <div class="content content-post CENTER">
-   <article id="post-常用-Linux-命令" class="article article-type-post" itemprop="blogPost">
+   <article id="post-解决开发团队中遇到的问题" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">常用 Linux 命令</h1>
+    <h1 class="post-title">解决开发团队中遇到的问题</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2019.10.12</span>
+        <span>2020.02.28</span>
       </span>
 
       
@@ -195,7 +195,7 @@ ga('send', 'pageview');
       
   <span class="article-category">
     <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
   </span>
 
 
@@ -203,7 +203,7 @@ ga('send', 'pageview');
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://xiaogliu.github.io/2019/10/12/common-linux-command/#disqus_thread"></a>
+          <a href="https://xiaogliu.github.io/2020/02/28/solve-problems-in-team/#disqus_thread"></a>
         </span>
       
 
@@ -220,32 +220,17 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <table>
-<thead>
-<tr>
-<th>命令</th>
-<th>中文名及功能</th>
-<th>应用举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>lsof</code> (list open files)</td>
-<td>列出当前系统打开的文件</td>
-<td><code>lsof -i:3000</code>：正在使用 3000 端口的进程</td>
-</tr>
-<tr>
-<td><code>make</code></td>
-<td>“制作”某个文件</td>
-<td><code>make rn_setup_npm</code></td>
-</tr>
-<tr>
-<td><code>pkill [process name]</code></td>
-<td>kill process by name</td>
-<td><code>pkill nginx</code></td>
-</tr>
-</tbody>
-</table>
+      <p>今天开发团队中遇到了一个问题，大概是：一个用户量较小的市场下出了一个 bug，开发人员调查两天没有发现问题，就先放下了。但一段时间后，这个问题扩展到更大市场。</p>
+<p>Leader 在总结时说了一段话，我觉得挺有道理：</p>
+<p>首先，开发不止要注重技术，还要关心业务：</p>
+<blockquote>
+<p>我们是dev ops，不只是服务稳定运行，Bussiness metric 也是关键哈，大家要有业务敏感度哈，不能只考虑技术层面，就好像你在运作一个业务一样。</p>
+</blockquote>
+<p>第二，就是解决问题的方法，这个我觉得很重要：</p>
+<blockquote>
+<p>我觉得问题不在我们是否做了足够深入的调查，我觉得问题在于我们处理事情的方法。一般来说我们技术人员，都是解决问题型的思维方式，遇到问题第一个考虑是我们把他解决掉，所以会陷入进去。其实按我的经验  遇到问题最好的处理方法: be transparency. 尽早的把相关方都拉进来，分享出去，多方同步跟进。这样能从不同的渠道获得更多的信息，避免单打独斗。</p>
+</blockquote>
+<p>关于第二点，深有感触：“遇到问题第一个考虑是我们把他解决掉”，不然会怀疑自己能力。钻研能力肯定要有，但业务一旦复杂起来，尤其自己负责的业务对其他业务有依赖时，自己要做的是前期调研，理清问题，然后去可能的相关 team 寻求帮助。实在不行，及时在自己的 team 中反馈出来，资深的 enginner 或者 leader 一般都会提供有帮助的信息。再不行，一般公司都会有反馈问题的 channel（如果没有，应该建立，微信群或者 slack 的 channel），反馈出去。这样更有助要解决问题，继而有助于公司的发展。</p>
 
     
   </div>
@@ -257,10 +242,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2019/10/11/i18n-locale-code/">
+    <a class="show pull-left" href="/2019/10/12/common-linux-command/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2020/02/28/solve-problems-in-team/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -363,7 +348,7 @@ ga('send', 'pageview');
   <script>
     var disqus_shortname = 'xiaogliu';
     
-    var disqus_url = 'https://xiaogliu.github.io/2019/10/12/common-linux-command/';
+    var disqus_url = 'https://xiaogliu.github.io/2020/02/28/solve-problems-in-team/';
     
     (function(){
       var dsq = document.createElement('script');
